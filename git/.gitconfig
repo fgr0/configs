@@ -1,0 +1,31 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
+[alias]
+    st = status
+    ci = commit
+    ps = push
+    pl = pull
+    co = checkout
+    lo = log --decorate --graph --show-signature
+    l1 = log --graph --format='%C(auto)%h%d [%C(bold red)%G?%C(bold green)% GK%Creset]%C(auto) %s (%ar)'
+    hist = log --date=short --pretty=tformat:'%C(auto)%H %ad - %an [%C(bold red)%G?%Creset] %s'
+[log]
+	decorate = none
+[push]
+	default = matching
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[include]
+    path = ~/.gitconfig.local
+[user]
+    name = Franz Greiling
+	email = fgr@sadmac.de
