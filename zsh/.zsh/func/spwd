@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+#
+# returns the current path with only first letter
+
+local pwd="${PWD/#$HOME/~}"
+
+if [[ "$pwd" == (#m)[/~] ]]; then
+  print "$MATCH"
+  unset MATCH
+else
+  print "${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}/${pwd:t}"
+fi
