@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+#
+# change directory to frontmost finder window
+
+cd "$(pfd)"

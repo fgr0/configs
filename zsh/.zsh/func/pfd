@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+#
+# print frontmost finder directory
+
+osascript 2> /dev/null <<EOF
+tell application "Finder"
+  if (1 ≤ (count Finder windows)) then
+    get POSIX path of (target of first window as text)
+  else
+    get POSIX path of (desktop as text)
+  end if
+end tell
+EOF
