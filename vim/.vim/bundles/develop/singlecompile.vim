@@ -5,7 +5,7 @@
 "       files
 " URL:  http://singlecompile.topbug.net/
 
-NeoBundle 'xuhdev/SingleCompile'
+call dein#add('xuhdev/SingleCompile')
 
 let g:SingleCompile_usedialog = 0
 let g:SingleCompile_menumode = 0

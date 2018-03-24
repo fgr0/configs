@@ -4,7 +4,7 @@
 " DESC: Vim script for text filtering and alignment
 " URL:  https://github.com/godlygeek/tabular
 
-NeoBundleLazy 'godlygeek/tabular', {'autoload':{'commands':'Tabularize'}}
+call dein#add('godlygeek/tabular', {'autoload':{'commands':'Tabularize'}})
 
 nmap <Leader>t& :Tabularize /&<CR>
 vmap <Leader>t& :Tabularize /&<CR>

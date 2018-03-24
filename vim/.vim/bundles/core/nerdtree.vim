@@ -4,7 +4,7 @@
 " DESC: A tree explorer plugin for vim
 " URL:  https://github.com/scrooloose/nerdtree
 
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 
 map <F7> :NERDTreeToggle<CR>
 nmap <leader>nt :NERDTreeToggle<CR>

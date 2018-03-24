@@ -4,8 +4,8 @@
 " DESC: Automated tag file generation and syntax highlighting of tags in Vim 
 " URL:  http://peterodding.com/code/vim/easytags/
 
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
+call dein#add('xolox/vim-misc')
+call dein#add('xolox/vim-easytags')
 
 let g:easytags_suppress_ctags_warning = 1
 let g:easytags_by_filetype = "~/.tags/"

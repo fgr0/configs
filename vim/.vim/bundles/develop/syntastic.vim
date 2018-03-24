@@ -4,7 +4,7 @@
 " DESC: Syntax checking hacks for vim
 " URL:  https://github.com/scrooloose/syntastic
 
-NeoBundle 'scrooloose/syntastic'
+call dein#add('scrooloose/syntastic')
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_auto_loc_list = 2

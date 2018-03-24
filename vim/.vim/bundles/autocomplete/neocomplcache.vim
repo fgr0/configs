@@ -10,8 +10,8 @@ if has('lua')
     finish
 endif
 
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/context_filetype.vim'
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/context_filetype.vim')
 
 let g:neocomplcache_enable_at_startup = 1
 

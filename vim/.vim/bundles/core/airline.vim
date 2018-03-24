@@ -4,7 +4,7 @@
 " DESC: lean & mean status/tabline for vim that's light as air
 " URL:  https://github.com/bling/vim-airline
 
-NeoBundle 'bling/vim-airline' 
+call dein#add('bling/vim-airline')
 
 " let g:airline#extensions#whitespace#enabled = 0
 " let g:airline#extensions#whitespace#show_message = 0

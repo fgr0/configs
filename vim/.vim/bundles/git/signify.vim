@@ -8,7 +8,7 @@ if !has('signs')
     finish
 endif
 
-NeoBundle 'mhinz/vim-signify'
+call dein#add('mhinz/vim-signify')
 
 let g:signify_mapping_toggle_highlight = 'cog'
 let g:signify_mapping_next_hung = ']h'

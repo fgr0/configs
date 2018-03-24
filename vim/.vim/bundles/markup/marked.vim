@@ -8,4 +8,4 @@ if !has('macunix')
     finish
 endif
 
-NeoBundleLazy 'itspriddle/vim-marked', {'autoload':{'filetypes':['markdown','pandoc']}}
+call dein#add('itspriddle/vim-marked', {'autoload':{'filetypes':['markdown','pandoc']}})

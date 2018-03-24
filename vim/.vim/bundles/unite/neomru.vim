@@ -4,4 +4,4 @@
 " DESC: MRU plugin includes unite.vim MRU sources
 " URL:  https://github.com/Shougo/neomru.vim
 
-NeoBundle 'Shougo/neomru.vim'
+call dein#add('Shougo/neomru.vim')

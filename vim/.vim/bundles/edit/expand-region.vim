@@ -5,4 +5,4 @@
 "       regions of text using the same key combination
 " URL:  https://github.com/terryma/vim-expand-region
 
-NeoBundle 'terryma/vim-expand-region'
+call dein#add('terryma/vim-expand-region')

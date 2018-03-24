@@ -4,7 +4,7 @@
 " DESC: fugitive.vim: a Git wrapper so awesome, it should be illegal 
 " URL:  http://www.vim.org/scripts/script.php?script_id=2975
 
-NeoBundle 'tpope/vim-fugitive'
+call dein#add('tpope/vim-fugitive')
 
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>

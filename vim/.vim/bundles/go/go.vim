@@ -6,7 +6,7 @@
 
 " You will want to install gocode:
 " go get github.com/nsf/gocode
-NeoBundle 'fatih/vim-go'
+call dein#add('fatih/vim-go')
 
 let g:go_snippet_engine = "neosnippet"
 " let g:go_highlight_fields = 1

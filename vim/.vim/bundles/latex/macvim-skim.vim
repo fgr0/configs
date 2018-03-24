@@ -8,6 +8,6 @@ if !has("gui_macvim")
     finish
 endif
 
-NeoBundleLazy 'keflavich/macvim-skim', {'autoload':{'filetypes':['latex','tex']}}
+call dein#add('keflavich/macvim-skim', {'autoload':{'filetypes':['latex','tex']}})
 
 let g:macvim_skim_app_path = "/Applications/Skim.app"

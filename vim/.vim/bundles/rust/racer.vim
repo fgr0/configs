@@ -10,7 +10,7 @@ endif
 
 " Use NeoBundle to add the plugin
 " refer to :h neobundle for Options/Settings
-NeoBundle 'phildawes/racer'
+call dein#add('phildawes/racer')
 
 " Set plugin options like mappings after this point
 " WARN: things like 'call some#plugin#function()' will not! work in this file,

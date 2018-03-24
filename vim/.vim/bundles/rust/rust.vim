@@ -6,7 +6,7 @@
 
 " Use NeoBundle to add the plugin
 " refer to :h neobundle for Options/Settings
-NeoBundle 'rust-lang/rust.vim'
+call dein#add('rust-lang/rust.vim')
 
 " Set plugin options like mappings after this point
 hi def link rustModPathSep    Include

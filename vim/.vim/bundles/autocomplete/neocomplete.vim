@@ -9,7 +9,7 @@ if !has('lua')
     finish
 endif
 
-NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload':{'insert':1}, 'vim_version':'7.3.885' }
+call dein#add('Shougo/neocomplete.vim', { 'autoload':{'insert':1}, 'vim_version':'7.3.885' })
 
 " Start Neocomplete
 let g:neocomplete#enable_at_startup = 1

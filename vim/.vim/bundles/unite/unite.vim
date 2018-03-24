@@ -4,7 +4,7 @@
 " DESC: Unite and create user interfaces
 " URL:  http://www.vim.org/scripts/script.php?script_id=3396
 
-NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/unite.vim')
 
 let g:unite_data_directory = '~/.vim/cache/unite'
 let g:unite_enable_start_insert = 1

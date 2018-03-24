@@ -6,7 +6,7 @@
 
 " Use NeoBundle to add the plugin
 " refer to :h neobundle for Options/Settings
-NeoBundle 'timonv/vim-cargo'
+call dein#add('timonv/vim-cargo')
 
 " Set plugin options like mappings after this point
 " WARN: things like 'call some#plugin#function()' will not! work in this file,

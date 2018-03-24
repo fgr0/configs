@@ -4,7 +4,7 @@
 " DESC: Vim plugin that displays tags in a window, ordered by scope 
 " URL:  http://majutsushi.github.com/tagbar/
 
-NeoBundleLazy 'majutsushi/tagbar', {'autoload':{'commands':'TagbarToggle'}}
+call dein#add('majutsushi/tagbar', {'autoload':{'commands':'TagbarToggle'}})
 
 nmap <F6> :TagbarToggle<CR>
 

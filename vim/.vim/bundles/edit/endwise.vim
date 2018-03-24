@@ -5,4 +5,4 @@
 "       script, etc
 " URL:  http://www.vim.org/scripts/script.php?script_id=2386
 
-NeoBundle 'tpope/vim-endwise'
+call dein#add('tpope/vim-endwise')

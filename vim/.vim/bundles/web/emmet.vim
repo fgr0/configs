@@ -4,6 +4,6 @@
 " DESC: emmet for vim
 " URL:  http://mattn.github.io/emmet-vim
 
-NeoBundleLazy 'mattn/emmet-vim', {'autoload':{'filetypes':['html']}}
+call dein#add('mattn/emmet-vim', {'autoload':{'filetypes':['html']}})
 
 let g:user_emmet_leader_key = '<leader>h'

@@ -4,7 +4,7 @@
 " DESC: Vim python-mode. PyLint, Rope, breakpoints from box
 " URL:  https://github.com/klen/python-mode
 
-NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
+call dein#add('klen/python-mode', {'autoload':{'filetypes':['python']}})
 
 let g:pymode_doc = 0
 let g:pymode_lint = 0
