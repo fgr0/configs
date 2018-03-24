@@ -1,0 +1,5 @@
+*
+!.gitignore
+!*/
+!repos/github.com/Shougo/dein.vim
+!repos/github.com/Shougo/dein.vim/*
