@@ -18,7 +18,7 @@ $ vim -c ":set nomore" +NeoBundleInstall +q
 
 The Idea behind this Vim configuration was to create a system that is easy to
 configure and extend. To achieve that, all settings are split up into individual
-files and sourced at startup. 
+files and sourced at startup.
 
 ### Standard configuration files
 
@@ -60,11 +60,11 @@ plugins will be used. For example, linux computer could set this option to
 To set this option without changing the `.vimrc`, *Furry VIM* looks for two
 *local* configuration files. These files should be used for system-dependent
 configuration--if you which to make broader changes, add a config file to the
-`~/.vim/config` or `~/.vim/bundles/*/` directory or change the appropriate parts. 
+`~/.vim/config` or `~/.vim/bundles/*/` directory or change the appropriate parts.
 
 The first file is the `~/.vimrc.bundles.local` and it is used to set the
 configuration option `g:furry_ignore_bundle_groups` and to add additional plugin
-bundles. 
+bundles.
 
 The second file is the `~/.vimrc.local` and it is always the last thing sourced
 by *Furry VIM*. That means, that you can use it, to overwrite any settings set
