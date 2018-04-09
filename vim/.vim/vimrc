@@ -9,6 +9,10 @@ if has('vim_starting') " {{{
 endif " }}}
 
 
+" Options
+let g:nerdfont = 0
+
+
 " Load Plugins {{{
 call plug#extentions#disable_buildin()
 

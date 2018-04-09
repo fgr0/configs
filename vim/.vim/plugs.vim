@@ -105,5 +105,8 @@ if count(g:plug_groups, 'fancy')
   " Plug 'mhinz/vim-startify'
 
   Plug 'fszymanski/deoplete-emoji'
-  Plug 'ryanoasis/vim-devicons'
+
+  if exists('g:nerdfont') && g:nerdfont
+    Plug 'ryanoasis/vim-devicons'
+  endif
 endif " }}}

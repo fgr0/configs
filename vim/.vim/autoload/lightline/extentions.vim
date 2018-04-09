@@ -12,30 +12,11 @@ endfunction
 
 " Remove all trailing padding from DevIcons' Symbols
 function! s:filetypeicon() abort
-  try
     return strpart(WebDevIconsGetFileTypeSymbol(), 0, 3)
-  catch /E117/
-    return ''
-  endtry
 endfunction
 
 function! s:fileformaticon() abort
-  try
     return strpart(WebDevIconsGetFileFormatSymbol(), 0, 3)
-  catch /E117/
-    return ''
-  endtry
-endfunction
-
-" Join String and icon
-function! s:joinstringicon(str, icon) abort
-  if strlen(a:str) == 0 && strlen(a:icon) > 0
-    return a:icon
-  elseif strlen(a:icon) == 0
-    return ''
-  else
-    return a:str . ' ' . a:icon
-  endif
 endfunction
 " }}}
 
@@ -68,8 +49,13 @@ function! lightline#extentions#filetype() abort " {{{
   if s:isspecial() && &ft != 'help'
     return ''
   endif
-  let label = (winwidth(0) > 60 && strlen(&filetype) ? &filetype : '' )
-  return s:joinstringicon(label, s:filetypeicon())
+
+  if exists('g:nerdfont') && g:nerdfont
+    let label = (winwidth(0) > 60 ? &filetype : '' )
+    return strlen(label) > 0 ? label . ' ' . s:filetypeicon() : s:filetypeicon()
+  else
+    return &filetype
+  endif
 endfunction " }}}
 
 
@@ -77,8 +63,14 @@ function! lightline#extentions#fileinfo() abort " {{{
   if s:isspecial()
     return ''
   endif
+
   let label = (winwidth(0) > 110 ? ( &fenc!=#"" ? &fenc : &enc ) : '')
-  return s:joinstringicon(label, s:fileformaticon())
+
+  if exists('g:nerdfont') && g:nerdfont
+    return strlen(label) > 0 ? label . ' ' . s:fileformaticon() : s:fileformaticon()
+  else
+    return label
+  endif
 endfunction " }}}
 
 
@@ -101,7 +93,8 @@ function! lightline#extentions#gitbranch() abort " {{{
   if s:isspecial()
     return ''
   endif
-  return fugitive#head() !=# "" ? '' . ( winwidth(0) > 110 ? ' ' .fugitive#head(6) : '' ) : ''
+  let symbol = exists('g:nerdfont') && g:nerdfont ? '' : '↬'
+  return fugitive#head() !=# "" ? symbol . ( winwidth(0) > 110 ? ' ' .fugitive#head(6) : '' ) : ''
 endfunction " }}}
 
 
@@ -111,24 +104,27 @@ endfunction " }}}
 
 
 function! lightline#extentions#whitespace() abort " {{{
-  let line = search('\s$', 'nw')
-  return (line != 0) ? ' ' . line  : ''
-endfunction " }}}
-
-
-function! lightline#extentions#wordcount() abort " {{{
   if s:isspecial()
     return ''
   endif
 
+  let line = search('\s$', 'nw')
+  let symbol = exists('g:nerdfont') && g:nerdfont ? ' ' : '• '
+
+  return (line != 0) ? symbol . line  : ''
+endfunction " }}}
+
+
+function! lightline#extentions#wordcount() abort " {{{
   let wordcount = wordcount()
   let words     = get(wordcount, 'words')
   let swords    = get(wordcount, 'visual_words')
+  let symbol    = exists('g:nerdfont') && g:nerdfont ? " " : ' ¶'
 
   if winwidth(0) < 90
-    return (swords > 0 ? '(' . swords . ')' : words ) . " "
+    return (swords > 0 ? '(' . swords . ')' : words ) . symbol
   else
-    return words . (swords > 0 ? '(' . swords . ')' : '') . ' Word(s)' . " "
+    return words . (swords > 0 ? '(' . swords . ')' : '') . ' Word(s)' . symbol
   endif
 endfunction " }}}
 " }}}
