@@ -8,7 +8,6 @@ let mapleader=","
 " Core {{{
 " Escape!
 inoremap jk <Esc>
-xnoremap jk <Esc>
 cnoremap jk <C-C>
 
 " Save
@@ -54,6 +53,7 @@ nnoremap <S-TAB> <C-W>W
 
 " Function Keys {{{
 " F1-F4: Options
+map <F2> :Goyo<CR>
 set pastetoggle=<F4>
 
 " F5-F8: Windows
