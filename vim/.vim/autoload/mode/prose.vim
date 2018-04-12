@@ -3,8 +3,17 @@
 " Prose Mode
 "
 
-function! mode#prose#start() abort
-endfunction
+function! mode#prose#init() abort
+  " initialize reedes' plugins
+  call lexical#init()
+  call litecorrect#init()
+  call pencil#init()
+  call textobj#sentence#init()
+  call textobj#quote#init({'educate': 0})
 
-function! mode#prose#end() abort
+  " do not autocomplete dictionary
+  let b:deoplete_ignore_sources = ['dictionary', 'around']
+
+  " don't use folds
+  setlocal nofoldenable
 endfunction

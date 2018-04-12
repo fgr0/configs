@@ -1,0 +1,1 @@
+call mode#prose#init()
