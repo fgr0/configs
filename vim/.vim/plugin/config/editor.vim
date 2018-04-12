@@ -66,3 +66,13 @@ set printoptions+=number:y
 let g:indentLine_char = '⎸'
 let g:indentLine_enabled = 0
 " }}}
+
+
+" Editorconfig {{{
+let g:editorconfig_root_chdir = 1
+" }}}
+
+
+" Auto Pairs {{{
+let g:AutoPairsMoveCharacter = ''
+" }}}

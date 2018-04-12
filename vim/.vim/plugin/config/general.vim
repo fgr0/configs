@@ -6,6 +6,7 @@
 set hidden
 set timeoutlen=500      " mapping timeout
 set ttimeoutlen=150     " keycode timeout
+set updatetime=400
 
 set modeline
 set modelines=1

@@ -19,7 +19,7 @@ let g:lightline = {
       \              [ 'filename' ] ],
       \   'right': [ [ 'whitespace', 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'filetype', 'fileinfo', 'wordcount' ] ]
+      \              [ 'filetype', 'fileinfo' ] ]
       \ },
       \ 'inactive': {
       \   'left':  [ [  ],

@@ -34,8 +34,16 @@ if count(g:plug_groups, 'core')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-repeat'
 
   Plug 'sgur/vim-editorconfig'
+
+  " Textobjects
+  Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-function'
+  Plug 'glts/vim-textobj-comment'
+  Plug 'reedes/vim-textobj-sentence'
+  Plug 'reedes/vim-textobj-quote'
 
   Plug 'plasticboy/vim-markdown'
 
@@ -47,7 +55,8 @@ endif " }}}
 
 " VCS {{{
 if count(g:plug_groups, 'vcs')
-  Plug 'mhinz/vim-signify'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'gilligan/textobj-gitgutter'
 
   " Git
   Plug 'tpope/vim-fugitive'
