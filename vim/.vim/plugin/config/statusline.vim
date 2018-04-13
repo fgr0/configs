@@ -14,7 +14,7 @@ set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
-      \   'left':  [ [ 'mode', 'paste' ],
+      \   'left':  [ [ 'mode', 'mode2' ],
       \              [ 'gitbranch', 'readonly' ],
       \              [ 'filename' ] ],
       \   'right': [ [ 'whitespace', 'lineinfo' ],
@@ -30,10 +30,11 @@ let g:lightline = {
       \              [ 'filetype', 'percent', 'lineinfo' ] ],
       \ },
       \ 'component': {
-      \   'lineinfo': ' %3l:%-2v/%L',
+      \   'lineinfo': '%3l:%-2v/%L',
       \ },
       \ 'component_function': {
       \   'mode':       'lightline#extentions#mode',
+      \   'mode2':       'lightline#extentions#mode2',
       \   'filename':   'lightline#extentions#filename',
       \   'gitbranch':  'lightline#extentions#gitbranch',
       \   'filetype':   'lightline#extentions#filetype',

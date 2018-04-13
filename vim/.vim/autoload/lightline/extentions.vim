@@ -45,6 +45,22 @@ function! lightline#extentions#mode() abort " {{{
 endfunction " }}}
 
 
+function! lightline#extentions#mode2() abort
+  let spellicon = exists('g:nerdfont') && g:nerdfont ? '' : '✓'
+  let pasteicon = exists('g:nerdfont') && g:nerdfont ? '' : '⇣'
+
+  if &paste && &spell
+    return pasteicon . ' ' . spellicon
+  elseif &paste
+    return pasteicon
+  elseif &spell
+    return spellicon
+  endif
+
+  return ''
+endfunction
+
+
 function! lightline#extentions#filetype() abort " {{{
   if s:isspecial() && &ft != 'help'
     return ''
@@ -99,7 +115,7 @@ endfunction " }}}
 
 
 function! lightline#extentions#percent() abort " {{{
-  return winwidth(0) > 70 ? (line('$') > winheight(0) ? '%P' : '') : ''
+  return winwidth(0) > 90 ? (line('$') > winheight(0) ? '%P' : '') : ''
 endfunction " }}}
 
 
@@ -116,6 +132,7 @@ endfunction " }}}
 
 
 function! lightline#extentions#wordcount() abort " {{{
+  " NOTE: This is quite slow on large files
   let wordcount = wordcount()
   let words     = get(wordcount, 'words')
   let swords    = get(wordcount, 'visual_words')

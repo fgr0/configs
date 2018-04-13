@@ -3,7 +3,9 @@
 " Key Mappings
 "
 
-let mapleader=","
+let mapleader      = "\<Space>"
+let maplocalleader = '\'
+
 
 " Core {{{
 " Escape!

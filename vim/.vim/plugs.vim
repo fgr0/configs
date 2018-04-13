@@ -58,7 +58,6 @@ if count(g:plug_groups, 'vcs')
   Plug 'airblade/vim-gitgutter'
   Plug 'gilligan/textobj-gitgutter'
 
-  " Git
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'rhysd/committia.vim'

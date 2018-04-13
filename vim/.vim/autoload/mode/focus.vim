@@ -15,8 +15,8 @@ function! mode#focus#start() abort
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
 
-  nmap <silent> <Leader>l :Limelight!!<cr>
-  xmap <Leader>l <Plug>(Limelight)
+  nmap <buffer><silent> <localleader>l :Limelight!!<cr>
+  xmap <buffer> <localleader>l <Plug>(Limelight)
 
   NERDTreeClose
   Limelight
