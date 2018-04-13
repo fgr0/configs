@@ -74,11 +74,11 @@ if count(g:plug_groups, 'completion')
     endif
 
     Plug 'Shougo/deoplete.nvim'
-  else
-    " TODO: use neocomplete or neocomplcache as fallback
   endif
 
   Plug 'Shougo/neco-vim'
+  Plug 'Shougo/echodoc.vim'
+  Plug 'Shougo/context_filetype.vim'
 
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
@@ -91,7 +91,9 @@ if count(g:plug_groups, 'programming')
   Plug 'majutsushi/tagbar'
 
   Plug 'xuhdev/SingleCompile', { 'on': ['SCCompile', 'SCCompileRun', 'SCCompileRunAsync', 'SCViewResult'] }
-  Plug 'ludovicchabant/vim-gutentags'
+  if v:version >= 800
+    Plug 'ludovicchabant/vim-gutentags'
+  endif
   Plug 'w0rp/ale'
 endif " }}}
 

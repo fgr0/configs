@@ -11,7 +11,7 @@ set updatetime=400
 set modeline
 set modelines=1
 
-set shortmess=aIoOtT
+set shortmess=aIoOtTc
 set more
 
 set ruler

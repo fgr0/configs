@@ -3,10 +3,20 @@
 " Setup completion
 "
 
+" Early Exit
+if v:version < 800 || !has('python3')
+  finish
+endif
+
+set completeopt=longest,menu
+
 " Deoplete {{{
 " Autoenable on InsertEnter
 let g:deoplete#enable_at_startup = 0
-autocmd InsertEnter * call deoplete#enable()
+autocmd InsertEnter * call deoplete#enable() 
+      \ | call echodoc#enable()
+
+let b:deoplete_ignore_sources = ['dictionary', 'around', 'buffer']
 
 " call deoplete#custom#source('dictionary', 'matchers', ['matcher_head'])
 " call deoplete#custom#source('dictionary', 'sorters', [])

@@ -55,8 +55,8 @@ nnoremap <S-TAB> <C-W>W
 
 " Function Keys {{{
 " F1-F4: Options
-map <F2> call mode#prose#init()
-map <F3> :Goyo<CR>
+map <silent> <F2> :Prose<CR>
+map <silent> <F3> :Goyo<CR>
 set pastetoggle=<F4>
 
 " F5-F8: Windows
