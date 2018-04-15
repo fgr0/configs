@@ -47,7 +47,7 @@ if count(g:plug_groups, 'core')
 
   " Colors & Fonts
   Plug 'chriskempson/base16-vim'
-  Plug 'rakr/vim-one'
+  Plug 'joshdick/onedark.vim'
 endif " }}}
 
 

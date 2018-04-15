@@ -7,7 +7,7 @@
 " Lightline Config {{{
 " For function definitions look under autoload/lightline/extentions.vim
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left':  [ [ 'mode', 'mode2' ],
       \              [ 'gitbranch', 'readonly' ],
