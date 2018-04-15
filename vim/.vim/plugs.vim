@@ -45,10 +45,8 @@ if count(g:plug_groups, 'core')
   Plug 'reedes/vim-textobj-sentence'
   Plug 'reedes/vim-textobj-quote'
 
-  Plug 'plasticboy/vim-markdown'
-
   " Colors & Fonts
-  Plug 'laerador/vim-color-gray-solarized'
+  Plug 'chriskempson/base16-vim'
   Plug 'rakr/vim-one'
 endif " }}}
 

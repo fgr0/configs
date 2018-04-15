@@ -27,4 +27,4 @@ syntax enable
 
 
 set background=dark
-colorscheme one
+colorscheme base16-onedark

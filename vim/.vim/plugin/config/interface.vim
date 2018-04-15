@@ -4,10 +4,27 @@
 "
 
 
-if has('gui_running')
-  set guioptions=mcgM
+set showcmd
+set cmdheight=1
+set noshowmode
+set laststatus=2
 
-  set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12,Source\ Code\ Pro:h12
+
+set number relativenumber
+set cursorline
+
+augroup smartcursorline
+  autocmd WinLeave * setlocal nocursorline
+  autocmd WinEnter * setlocal cursorline
+augroup END
+
+
+if has('gui_running')
+  set guioptions  =mcgM
+  set guifont     =SauceCodePro\ Nerd\ Font\ Mono:h12,Source\ Code\ Pro:h12
+
+  set columns =125
+  set lines   =50
 else
   " Truecolor support
   if has('termguicolors')
@@ -18,6 +35,11 @@ else
     set t_8f=[38;2;%lu;%lu;%lum
   endif
 endif
+
+
+" Secific Highlighting Rules
+hi! link FoldColumn LineNr
+hi! link SignColumn LineNr
 
 
 " Showmarks {{{

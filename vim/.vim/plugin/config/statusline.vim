@@ -3,11 +3,6 @@
 " Statusline
 "
 
-set showcmd
-set noshowmode
-set cmdheight=2
-set laststatus=2
-
 
 " Lightline Config {{{
 " For function definitions look under autoload/lightline/extentions.vim

@@ -19,8 +19,9 @@ function! mode#focus#start() abort
   xmap <buffer> <localleader>l <Plug>(Limelight)
 
   NERDTreeClose
-  Limelight
+  " Limelight
 endfunction
+
 
 function! mode#focus#end() abort
   if exists('$TMUX')

@@ -14,17 +14,6 @@ set modelines=1
 set shortmess=aIoOtTc
 set more
 
-set ruler
-set number relativenumber
-
-" Cursorline
-set cursorline
-
-augroup smartcursorline
-  autocmd WinLeave * setlocal nocursorline
-  autocmd WinEnter * setlocal cursorline
-augroup END
-
 " Window Splits
 " set splitbelow
 set splitright
