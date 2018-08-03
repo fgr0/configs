@@ -10,3 +10,7 @@ setopt cdable_vars      # Change directory to a path stored in a variable
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+
+# Bookmarks
+if [[ -d "$HOME/Documents/Development" ]] { hash -d -- dev=$HOME/Documents/Development }
