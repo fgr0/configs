@@ -29,7 +29,7 @@ let g:lexical#dictionary_key = '<leader>d'
 " }}}
 
 " Pencil {{{
-let g:pencil#textwidth = 90
+let g:pencil#textwidth = 80
 let g:pencil#conceallevel = 0
 " }}}
 

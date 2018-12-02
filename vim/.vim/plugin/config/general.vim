@@ -24,7 +24,7 @@ set wildignorecase
 
 " Do not show these files in the Tabcompletion (in CMD)
 set wildignore+=.hg,.git,.svn
-set wildignore+=*.aux,*.out,*.toc,*.fls
+set wildignore+=*.aux,*.out,*.toc,*.fls,*.log
 set wildignore+=*.jpg,*.jpeg,*.bmp,*.gif,*.png
 set wildignore+=*.o,*.obj,*.exe,*.dll
 set wildignore+=*.pyc,*.class

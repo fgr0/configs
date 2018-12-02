@@ -22,7 +22,6 @@ function! plug#extentions#disable_buildin() abort
   let g:loaded_getscriptPlugin = 1
   let g:loaded_gzip = 1
   let g:loaded_logiPat = 1
-  let g:loaded_matchit = 1
   let g:loaded_rrhelper = 1
   let g:loaded_ruby_provider = 1
   let g:loaded_shada_plugin = 1
@@ -34,6 +33,7 @@ function! plug#extentions#disable_buildin() abort
   let g:loaded_vimballPlugin = 1
   let g:loaded_zip = 1
   let g:loaded_zipPlugin = 1
+  " let g:loaded_matchit = 1
   " let g:loaded_matchparen = 1
   " let g:loaded_netrwPlugin = 1
 endfunction

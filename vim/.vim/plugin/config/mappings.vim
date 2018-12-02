@@ -32,6 +32,9 @@ vnoremap <Leader>p "0p
 nmap <leader>sd :set spelllang=de_20<cr>
 nmap <leader>se :set spelllang=en_us<cr>
 nmap <leader>z 1z=
+
+" Prevent accidental opening of CommandLine Window
+nmap q: :q
 " }}}
 
 " Movement {{{

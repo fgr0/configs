@@ -8,19 +8,27 @@ if v:version < 800 || !has('python3')
   finish
 endif
 
-set completeopt=longest,menu
-
 " Deoplete {{{
 " Autoenable on InsertEnter
 let g:deoplete#enable_at_startup = 0
 autocmd InsertEnter * call deoplete#enable() 
       \ | call echodoc#enable()
 
-let b:deoplete_ignore_sources = ['dictionary', 'around', 'buffer']
+let g:deoplete#ignore_sources = ['dictionary', 'around', 'buffer']
 
-" call deoplete#custom#source('dictionary', 'matchers', ['matcher_head'])
-" call deoplete#custom#source('dictionary', 'sorters', [])
-" call deoplete#custom#source('dictionary', 'min_pattern_length', 4)
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = 
+    \   '\\(?:'
+    \  .   '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
+    \  .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
+    \  .  '|hyperref\s*\[[^]]*'
+    \  .  '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+    \  .  '|(?:include(?:only)?|input)\s*\{[^}]*'
+    \  .')'
+
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 " }}}
 
 

@@ -6,49 +6,49 @@
 
 " Define Plugin Groups
 if !exists("g:plug_groups")
-  let g:plug_groups = ['core', 'vcs', 'completion', 'programming', 'writing', 'fancy']
+  let g:plug_groups = ['vcs', 'completion', 'programming', 'javascript', 'writing', 'latex', 'fancy']
 endif
 
 
 " Core {{{
-if count(g:plug_groups, 'core')
-  " Interface
-  Plug 'itchyny/lightline.vim'
-  Plug 'exvim/ex-showmarks'
+" Interface
+Plug 'itchyny/lightline.vim'
+Plug 'exvim/ex-showmarks'
 
-  Plug 'scrooloose/nerdtree'
-  Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-  Plug 'milkypostman/vim-togglelist'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'milkypostman/vim-togglelist'
 
-  Plug 'Yggdroot/indentLine', { 'on': [ 'IndentLinesDisable', 'IndentLinesEnable', 'IndentLinesToggle' ]}
+Plug 'Yggdroot/indentLine', { 'on': [ 'IndentLinesDisable', 'IndentLinesEnable', 'IndentLinesToggle' ]}
 
-  Plug 'kopischke/vim-fetch'
+Plug 'kopischke/vim-fetch'
 
-  " Edit
-  Plug 'junegunn/vim-slash'
-  Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-  Plug 'justinmk/vim-sneak'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'tpope/vim-unimpaired'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-repeat'
+" Edit
+Plug 'junegunn/vim-slash'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'justinmk/vim-sneak'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'andymass/vim-matchup'
 
-  Plug 'sgur/vim-editorconfig'
+Plug 'sgur/vim-editorconfig'
 
-  " Textobjects
-  Plug 'kana/vim-textobj-user'
-  Plug 'kana/vim-textobj-function'
-  Plug 'glts/vim-textobj-comment'
-  Plug 'reedes/vim-textobj-sentence'
-  Plug 'reedes/vim-textobj-quote'
+" Textobjects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-function'
+Plug 'glts/vim-textobj-comment'
+Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-textobj-quote'
 
-  " Colors & Fonts
-  Plug 'chriskempson/base16-vim'
-  Plug 'joshdick/onedark.vim'
-endif " }}}
+" Colors & Fonts
+Plug 'chriskempson/base16-vim'
+Plug 'joshdick/onedark.vim'
+" }}}
 
 
 " VCS {{{
@@ -96,6 +96,14 @@ if count(g:plug_groups, 'programming')
 endif " }}}
 
 
+" JavaScript {{{
+if count(g:plug_groups, 'javascript')
+  Plug 'pangloss/vim-javascript'
+  Plug 'posva/vim-vue'
+
+endif " }}}
+
+
 " Writing {{{
 if count(g:plug_groups, 'writing')
   Plug 'reedes/vim-pencil'
@@ -103,6 +111,14 @@ if count(g:plug_groups, 'writing')
   Plug 'reedes/vim-wordy'
   Plug 'reedes/vim-lexical'
 endif " }}}
+
+
+" LaTeX {{{
+if count(g:plug_groups, 'latex')
+  Plug 'lervag/vimtex'
+  Plug 'rbonvall/vim-textobj-latex'
+endif
+" }}}
 
 
 " Fancy {{{
