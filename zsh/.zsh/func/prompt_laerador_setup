@@ -1,25 +1,21 @@
 # My personal Theme...
 
-PROMPT_LAERADOR_CMD_MAX_EXEC_TIME=${PROMPT_LAERADOR_CMD_MAX_EXEC_TIME:-10}
-
-function prompt_laerador_prompt_char() {
+function prompt_laerador_promptchar() {
   case "$KEYMAP" {
-    vicmd)
-      print -n "%F{red}%B%#%b%f"
-      ;;
-    *)
-      print -n "%f%#%f"
-  }  
+    vicmd) print -n "%F{red}%B%#%b%f" ;;
+    *) print -n "%f%#%f"
+  }
 }
 
-function prompt_laerador_check_time() {
+function prompt_laerador_checktime() {
+  integer threshold=${PROMPT_LAERADOR_CMD_MAX_EXEC_TIME:-10}
   integer elapsed
-  let "elapsed = $EPOCHSECONDS - ${_prompt_laerador_cmd_timestamp:-$EPOCHSECONDS}"
+  local human=" "
+
+  (( elapsed = $EPOCHSECONDS - ${_prompt_laerador_cmd_timestamp:-$EPOCHSECONDS} ))
   unset _prompt_laerador_cmd_timestamp
 
-  local human=" " 
-
-  if (( elapsed > $PROMPT_LAERADOR_CMD_MAX_EXEC_TIME )) {
+  if (( elapsed > threshold )) {
     # https://github.com/sindresorhus/pretty-time-zsh
     local days=$(( elapsed / 60 / 60 / 24 ))
     local hours=$(( elapsed / 60 / 60 % 24 ))
@@ -37,8 +33,7 @@ function prompt_laerador_check_time() {
 
 function prompt_laerador_precmd() {
   vcs_info
-  prompt_laerador_check_time
-  _prompt_laerador_pwd=$(spwd)
+  prompt_laerador_checktime
 }
 
 function prompt_laerador_preexec() {
@@ -63,17 +58,18 @@ function prompt_laerador_setup() {
   zstyle ':vcs_info:*:*' stagedstr ' ±'
   zstyle ':vcs_info:*:*' formats '%F{242}:%b%u%c'
   zstyle ':vcs_info:*:*' actionformats '%F{242}:%b:%F{yellow}%a%F{242}%u%c'
-  
+
   # Prompt sections
   local root="%(!.%F{red}%n.%F{white}${SSH_TTY:+%n})%f"
   local host="%f%(!.@%m.${SSH_TTY:+@%m})%f"
-  local pwd="%F{blue}"'${_prompt_laerador_pwd}'"%f"
+  local spwd="%F{blue}"'$(spwd)'"%f"
   local vcs='${vcs_info_msg_0_}'"%f"
+  local char='$(prompt_laerador_promptchar)'
 
-  local elaptime='${_prompt_laerador_cmd_elapsed}'
   local code="%(?..%F{red}%?)%f"
+  local elaptime='${_prompt_laerador_cmd_elapsed}'
 
-  PROMPT="${root}${host} ${pwd}${vcs} "'$(prompt_laerador_prompt_char)'" "
+  PROMPT="${root}${host} ${spwd}${vcs} ${char} "
   RPROMPT="${code} ${elaptime}"
   SPROMPT='%fzsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 

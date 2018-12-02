@@ -12,3 +12,9 @@ alias ll='ls -lh'
 alias la='ll -A'
 
 alias df='df -hk'
+
+autoload -Uz zmv
+alias zcp='zmv -C'
+alias zln='zmv -L'
+alias mmv='zmv -W'
+alias zmv='noglob zmv'

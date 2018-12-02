@@ -1,14 +1,14 @@
 # .zprofile: user startup file for zsh(1) login shells
 #
 # On some systems /etc/zprofile is used to set system specific paths,
-# therefore we need to define paths here instead of .zshenv so we can 
+# therefore we need to define paths here instead of .zshenv so we can
 # define the order.
 
 #
 # Paths
 #
 
-prefix='/usr/local'
+local prefix='/usr/local'
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path

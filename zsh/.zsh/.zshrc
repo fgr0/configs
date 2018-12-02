@@ -6,7 +6,6 @@
 # Source libs
 #
 
-# TODO: Cleaner way of loading deps
 for zconfig (${ZDOTDIR}/lib/*.zsh) source $zconfig
 unset zconfig
 
