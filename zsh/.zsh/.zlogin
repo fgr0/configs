@@ -2,13 +2,17 @@
 #
 # Alternative startup file for login shells. Sourced after .zshrc
 
-#
-# Print a random, hopefully interesting, adage.
-#
+if [[ ! ( -t 0 || -t 1 ) ]]; then
+  return
+fi
 
+# Print a random, hopefully interesting, adage.
 if (( $+commands[fortune] )) && [ ! -f ~/.hushlogin ]; then
-  if [[ -t 0 || -t 1 ]]; then
+  if [[ $OSTYPE == freebsd* ]]; then
+    fortune freebsd-tips
+  else
     fortune -s
-    print
   fi
+
+  print
 fi
