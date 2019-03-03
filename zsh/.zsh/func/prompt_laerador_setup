@@ -2,7 +2,7 @@
 
 function prompt_laerador_promptchar() {
   case "$KEYMAP" {
-    vicmd) print -n "%F{red}%B%#%b%f" ;;
+    vicmd) print -n "%F{9}%B%#%b%f" ;;
     *) print -n "%f%#%f"
   }
 }
