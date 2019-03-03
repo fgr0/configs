@@ -16,6 +16,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'exvim/ex-showmarks'
 
 Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'milkypostman/vim-togglelist'
@@ -78,9 +80,12 @@ if count(g:plug_groups, 'completion')
   Plug 'Shougo/echodoc.vim'
   Plug 'Shougo/context_filetype.vim'
 
+  if executable('look')
+    Plug 'ujihisa/neco-look'
+  endif
+
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'honza/vim-snippets'
 endif " }}}
 
 
@@ -100,7 +105,6 @@ endif " }}}
 if count(g:plug_groups, 'javascript')
   Plug 'pangloss/vim-javascript'
   Plug 'posva/vim-vue'
-
 endif " }}}
 
 
