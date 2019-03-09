@@ -14,7 +14,7 @@ let g:lightline = {
       \              [ 'filename' ] ],
       \   'right': [ [ 'whitespace', 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'filetype', 'fileinfo' ] ]
+      \              [ 'charvaluehex', 'filetype', 'fileinfo' ] ]
       \ },
       \ 'inactive': {
       \   'left':  [ [  ],
