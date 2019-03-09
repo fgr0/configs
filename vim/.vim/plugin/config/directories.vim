@@ -15,9 +15,21 @@ if has('persistent_undo')
   set undolevels=1000
   set undoreload=10000
 
-  set undodir=~/.cache/vim/undo
-  set backupdir=~/.cache/vim/backup
-  set directory=~/.cache/vim/swap,.
+  set undodir=~/.vim/cache/undo
+  set backupdir=~/.vim/cache/backup
+  set directory=~/.vim/cache/swap,.
+
+  if !isdirectory(&undodir)
+    call mkdir(&undodir, 'p')
+  endif
+
+  if !isdirectory(&backupdir)
+    call mkdir(&backupdir, 'p')
+  endif
+
+  if !isdirectory(split(&directory, ',')[0])
+    call mkdir(split(&directory, ',')[0], 'p')
+  endif
 endif
 
 if has('mksession')

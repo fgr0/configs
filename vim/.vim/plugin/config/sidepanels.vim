@@ -5,7 +5,7 @@
 
 
 " NERDTree {{{
-let NERDTreeBookmarksFile     = '~/.cache/vim/NERDTreeBookmarks'
+let NERDTreeBookmarksFile     = '~/.vim/cache/NERDTreeBookmarks'
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeShowLineNumbers   = 0
 let NERDTreeMinimalUI         = 1

@@ -15,5 +15,5 @@ let g:SingleCompile_showresultafterrun = 1
 
 
 " Gutentags {{{
-let g:gutentags_cache_dir = '~/.cache/tags'
+let g:gutentags_cache_dir = '~/.vim/cache/tags'
 " }}}

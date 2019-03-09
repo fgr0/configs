@@ -64,7 +64,7 @@ call deoplete#custom#source('vim', 'mark', '')
 
 
 " Snippets {{{
-let g:neosnippet#data_directory = expand('~/.cache/vim/neosnippet')
+let g:neosnippet#data_directory = expand('~/.vim/cache/neosnippet')
 
 autocmd InsertLeave * NeoSnippetClearMarkers
 
