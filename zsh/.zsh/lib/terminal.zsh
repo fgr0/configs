@@ -14,7 +14,7 @@ function tab-title() {
 
 function tmux-title() {
   if [[ "$TERM" == screen* ]] || [[ ! -z $TMUX ]]; then
-    printf '\ek%s\e\\' ${(V)argv}
+    printf '\033]2;%s\033\\' ${(V)argv}
   fi
 }
 
@@ -36,16 +36,19 @@ autoload -Uz add-zsh-hook
 
 # Sets title before prompt is displayed
 function set-title-precmd() {
-  window-title ' '
+  local suffix=${(V)argv[1]}
+  suffix=${suffix:+ (${suffix})}
 
-  local title
-  if [[ ! -z $SSH_CONNECTION ]]; then
-    title="$HOST:"
+  local prefix=""
+  if [[ ! -z $SSH_CONNECTION ]] && [[ -z $TMUX ]]; then
+    prefix+="$(whoami)@${$(hostname)%%.*} "
   fi
 
-  tab-title "$title$(spwd)"
-  tmux-title "$(spwd)"
+  window-title "${prefix:- }${prefix:+$(spwd)${suffix}}"
+  tab-title "${prefix}$(spwd)${suffix}"
+  tmux-title "${prefix}$(spwd)${suffix}" 
 }
+
 add-zsh-hook precmd set-title-precmd
 
 # Set title before command execution
@@ -73,12 +76,9 @@ function set-title-with-command() {
     unset MATCH
 
     if [[ "$cmd" == "tmux" ]]; then
-      tab-title "$cmd"
-      window-title ' '
+      set-title-precmd
     else
-      tab-title $(spwd)" ($cmd)"
-      tmux-title $(spwd)"($cmd)"
-      window-title "$cmd"
+      set-title-precmd "$cmd"
     fi
   fi
 }
