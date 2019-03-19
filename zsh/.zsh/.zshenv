@@ -39,7 +39,7 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 # Location of zsh startup files
-export ZDOTDIR="$HOME/.zsh"
+export ZDOTDIR=${ZDOTDIR:-"$HOME/.zsh"}
 
 # Setup paths in .zprofile to ensure priority over paths set by the system
 # Ensure that a non-login, non-interactive shell has a defined environment
