@@ -22,6 +22,9 @@ nnoremap Y y$
 " Reselect visual selection after shifting
 vnoremap < <gv
 vnoremap > >gv
+nnoremap <silent> Q gqap
+xnoremap <silent> Q gq
+nnoremap <silent> <leader>Q vapJgqap
 
 " paste last yank
 noremap <Leader>p "0p
@@ -58,8 +61,9 @@ nnoremap <S-TAB> <C-W>W
 
 " Function Keys {{{
 " F1-F4: Options
-map <silent> <F2> :Prose<CR>
-map <silent> <F3> :Goyo<CR>
+map  <silent> <F2> :Prose<CR>
+map  <silent> <F3> :Goyo<CR>
+imap <silent> <F3> <C-O>:Goyo<CR>
 set pastetoggle=<F4>
 
 " F5-F8: Windows

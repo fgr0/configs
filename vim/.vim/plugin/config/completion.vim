@@ -39,7 +39,7 @@ call deoplete#custom#source('_', {
       \   'converter_truncate_menu', 'converter_auto_delimiter',
       \ ],
       \ })
-call deoplete#custom#source('omni', 'input_pattern', {
+call deoplete#custom#source('omni', 'input_patterns', {
       \ 'tex': '\\(?:'
       \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
       \ .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'

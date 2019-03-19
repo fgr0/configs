@@ -57,6 +57,8 @@ set foldmethod=syntax
 " Misc {{{
 set diffopt+=vertical
 
+set commentstring=#\ %s
+
 set printoptions+=syntax:y
 set printoptions+=number:y
 " }}}
