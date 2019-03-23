@@ -84,14 +84,12 @@ zle -N prepend-sudo
 # Keybindings
 #
 
-zmodload zsh/terminfo
-
 bindkey -v
 
 # Completion
 bindkey -M main "." expand-dot-to-parent-directory-path
 bindkey -M main "\t" expand-or-complete-prefix-indicator
-bindkey -M main "$terminfo[kcbt]" reverse-menu-complete
+bindkey -M main "^[[Z" reverse-menu-complete
 
 bindkey -M viins ' ' magic-space
 
