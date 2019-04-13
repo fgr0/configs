@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+#
+# print first N lines of input and run specified command on the rest
+
+
+# check for argument
+# if the command line starts with +N, where N is any digit, it will be
+# used as the number of header lines in the input.
+integer hl=1
+
+if [[ $argv[1] =~ "^([+-])([0-9]+)$" ]]; then
+  hl=$match[2]
+  shift
+fi
+
+
+# if command line is empty, just print input
+if [[ $#argv -eq 0 ]]; then
+  cat <(<&0)
+  return
+fi
+
+# print the first N header lines
+for (( i = 1; i <= hl; i++ )) {
+  IFS='' read -r header
+  print -- $header
+}
+
+unset header
+
+# pass remaining input to command line
+"$@"
