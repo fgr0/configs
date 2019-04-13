@@ -5,7 +5,6 @@
 
 function! mode#prose#init(...) abort
   " initialize reedes' plugins
-  call lexical#init()
   call litecorrect#init()
   if exists("a:1")
     call pencil#init(a:1)

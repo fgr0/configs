@@ -4,12 +4,20 @@
 "
 
 
+" Window Splits
+" set splitbelow
+set splitright
+
 set showcmd
 set cmdheight=1
 set noshowmode
 set laststatus=2
+set shortmess=aIoOtTc
+set more
 
+set wildmenu
 
+" Cursor Line
 set number relativenumber
 set cursorline
 

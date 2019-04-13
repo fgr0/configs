@@ -11,15 +11,6 @@ set updatetime=400
 set modeline
 set modelines=1
 
-set shortmess=aIoOtTc
-set more
-
-" Window Splits
-" set splitbelow
-set splitright
-
-" Wildmenu
-set wildmenu
 set wildignorecase
 
 " Do not show these files in the Tabcompletion (in CMD)

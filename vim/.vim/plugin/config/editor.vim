@@ -14,6 +14,9 @@ silent! language en_US
 set nospell
 set spellfile=$HOME/.vim/spell/custom.utf-8.add
 set spelllang=en_us,de_de
+
+set dictionary=/usr/share/dict/words,/usr/share/dict/web2a
+set thesaurus=$HOME/.vim/thesaurus/mobythesaurus.txt,$HOME/.vim/thesaurus/openthesaurus.txt
 " }}}
 
 

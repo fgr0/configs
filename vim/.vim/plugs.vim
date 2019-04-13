@@ -113,7 +113,6 @@ if count(g:plug_groups, 'writing')
   Plug 'reedes/vim-pencil'
   Plug 'reedes/vim-litecorrect'
   Plug 'reedes/vim-wordy'
-  Plug 'reedes/vim-lexical'
 endif " }}}
 
 

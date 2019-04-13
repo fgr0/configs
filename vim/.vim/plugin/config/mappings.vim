@@ -32,8 +32,13 @@ noremap <Leader>P "0P
 vnoremap <Leader>p "0p
 
 " Spell checking
+nmap <leader>s vaWovEa<C-X><C-S>
+nmap <leader>d vaWovEa<C-X><C-K>
+nmap <leader>t vaWovEa<C-X><C-T>
+
 nmap <leader>sd :set spelllang=de_20<cr>
 nmap <leader>se :set spelllang=en_us<cr>
+
 nmap <leader>z 1z=
 
 " Prevent accidental opening of CommandLine Window
@@ -114,4 +119,7 @@ omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending
 xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
+
+" Unimpaired
+nmap <space>o yo
 " }}}

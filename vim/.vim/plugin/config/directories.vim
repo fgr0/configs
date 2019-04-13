@@ -3,6 +3,8 @@
 " Directories & History
 "
 
+set path+=**
+
 set tags+=./tags,./.tags,$HOME/.tags/*
 set tags+=tags,.tags
 
