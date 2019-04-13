@@ -94,8 +94,8 @@ bindkey -M main "^[[Z" reverse-menu-complete
 bindkey -M viins ' ' magic-space
 
 # Editing
-bindkey -M viins "^E" expand-cmd-path
-bindkey -M vicmd "^E" expand-cmd-path
+bindkey -M viins "^Xe" expand-cmd-path
+bindkey -M vicmd "^Xe" expand-cmd-path
 
 bindkey -M viins "^Xs" prepend-sudo
 bindkey -M vicmd "^Xs" prepend-sudo
@@ -103,11 +103,11 @@ bindkey -M vicmd "^Xs" prepend-sudo
 bindkey -M viins "^K" kill-buffer
 bindkey -M vicmd "^K" kill-buffer
 
-bindkey -M viins "^Q" push-input
-bindkey -M vicmd "^Q" push-input
+bindkey -M viins "^[q" push-input
+bindkey -M vicmd "^[q" push-input
 
 bindkey -M viins "^[e" edit-command-line
-bindkey -M viins "^[e" edit-command-line
+bindkey -M vicmd "^[e" edit-command-line
 
 
 bindkey -M viins "^[[3~" vi-delete-char
