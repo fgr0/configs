@@ -16,7 +16,7 @@ let g:nerdfont = 0
 " Load Plugins {{{
 call plug#extentions#disable_buildin()
 
-call plug#begin("~/.vim/cache/plugged")
+call plug#begin('~/.cache/vim/plugged')
   source ~/.vim/plugs.vim
 call plug#end()
 
