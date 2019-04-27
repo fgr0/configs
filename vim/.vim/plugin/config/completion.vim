@@ -4,7 +4,7 @@
 "
 
 " Early Exit
-if v:version < 800 || !has('python3')
+if v:version < 800 || !has('python3') || !exists("*deoplete#enable")
   finish
 endif
 

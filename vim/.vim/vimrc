@@ -23,8 +23,13 @@ call plug#end()
 " Enable plugin system
 filetype plugin indent on
 syntax enable
+
+" Download plugins on fresh install
+if empty(glob('~/.cache/vim/plugged'))
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " }}}
 
 
 set background=dark
-colorscheme onedark
+silent! colorscheme onedark
