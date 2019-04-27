@@ -2,31 +2,7 @@
 # Terminal Title
 #
 
-# Terminal title and tab color functions taken from
-# https://github.com/dotphiles/dotzsh/blob/master/modules/terminal/init.zsh
-function window-title() {
-  printf '\e]2;%s\a' ${(V)argv}
-}
 
-function tab-title() {
-  printf '\e]1;%s\a' ${(V)argv}
-}
-
-function tmux-title() {
-  if [[ "$TERM" == screen* ]] || [[ ! -z $TMUX ]]; then
-    printf '\033]2;%s\033\\' ${(V)argv}
-  fi
-}
-
-function tab-color() {
-  print "\033]6;1;bg;red;brightness;$1\a"
-  print "\033]6;1;bg;green;brightness;$2\a"
-  print "\033]6;1;bg;blue;brightness;$3\a"
-}
-
-function tab-reset() {
-  print "\033]6;1;bg;*;default\a"
-}
 
 #
 # Command Hooks
@@ -36,17 +12,19 @@ autoload -Uz add-zsh-hook
 
 # Sets title before prompt is displayed
 function set-title-precmd() {
-  local suffix=${(V)argv[1]}
-  suffix=${suffix:+ (${suffix})}
+  local -A title=(
+    window  '\e]2;%s\a'
+    tab     '\e]1;%s\a'
+  )
 
-  local prefix=""
-  if [[ ! -z $SSH_CONNECTION ]] && [[ -z $TMUX ]]; then
-    prefix+="$(whoami)@${$(hostname)%%.*} "
+  local prefix=${SSH_CONNECTION:+"$(whoami)@${$(hostname)%%.*} "}
+  local suffix=${argv[1]:+" (${(V)argv[1]})"}
+
+  printf $title[window] "$(spwd)${suffix}"
+
+  if [[ -z $TMUX ]]; then
+    printf $title[tab]    "${prefix}$(spwd)${suffix}"
   fi
-
-  window-title "${prefix:- }${prefix:+$(spwd)${suffix}}"
-  tab-title "${prefix}$(spwd)${suffix}"
-  tmux-title "${prefix}$(spwd)${suffix}" 
 }
 
 add-zsh-hook precmd set-title-precmd
@@ -75,11 +53,7 @@ function set-title-with-command() {
     local cmd="${2[(wr)^(*=*|sudo|ssh|-*)]}"
     unset MATCH
 
-    if [[ "$cmd" == "tmux" ]]; then
-      set-title-precmd
-    else
-      set-title-precmd "$cmd"
-    fi
+    set-title-precmd "$cmd"
   fi
 }
 add-zsh-hook preexec set-title-with-command
