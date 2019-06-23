@@ -4,13 +4,14 @@
 "
 
 " Early Exit
-if v:version < 800 || !has('python3') || !exists("*deoplete#enable")
+if v:version < 800 || !has('python3') || empty(globpath(&rtp, 'autoload/deoplete.vim'))
   finish
 endif
 
 " Deoplete {{{
 " Autoenable on InsertEnter
 let g:deoplete#enable_at_startup = 0
+let g:echodoc#enable_at_startup = 0
 autocmd InsertEnter * call deoplete#enable()
       \ | call echodoc#enable()
 
