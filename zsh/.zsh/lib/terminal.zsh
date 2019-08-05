@@ -12,7 +12,8 @@ autoload -Uz add-zsh-hook
 
 # Sets title before prompt is displayed
 function set-title-precmd() {
-  local -A title=(
+  local -A title
+  title=(
     window  '\e]2;%s\a'
     tab     '\e]1;%s\a'
   )
