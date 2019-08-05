@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$SSH_ORIGINAL_COMMAND" ]; then
+  export ZDOTDIR="$HOME/.fgr0-dotfiles/zsh/.zsh"
+  exec zsh -l
+else
+  exec $SSH_ORIGINAL_COMMAND
+fi
