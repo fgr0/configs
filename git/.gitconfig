@@ -29,3 +29,7 @@
 [user]
     name = Franz Greiling
 	email = fgr@sadmac.de
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = false
