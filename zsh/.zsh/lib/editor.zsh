@@ -124,14 +124,16 @@ bindkey -M vicmd "^X" incarg
 bindkey -M vicmd "\-" neg-argument
 
 # Search
-bindkey -M viins "[A" up-line-or-search
-bindkey -M viins "[B" down-line-or-search
+bindkey -M viins "^[[A" up-line-or-search
+bindkey -M viins "^[[B" down-line-or-search
+bindkey -M viins "^[OA" up-line-or-search
+bindkey -M viins "^[OB" down-line-or-search
 
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M vicmd '?' history-incremental-pattern-search-forward
 
 bindkey -M isearch "^M" accept-search
-bindkey -M isearch "" vi-cmd-mode
-bindkey -M isearch "[A" history-incremental-pattern-search-backward
-bindkey -M isearch "[B" history-incremental-pattern-search-forward
+bindkey -M isearch "^[" vi-cmd-mode
+bindkey -M isearch "^[[A" history-incremental-pattern-search-backward
+bindkey -M isearch "^[[B" history-incremental-pattern-search-forward
 bindkey -M isearch "^?" vi-backward-kill-word
