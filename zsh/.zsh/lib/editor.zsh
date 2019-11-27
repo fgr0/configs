@@ -30,9 +30,6 @@ autoload -Uz down-line-or-beginning-search
 zle -N up-line-or-search up-line-or-beginning-search
 zle -N down-line-or-search down-line-or-beginning-search
 
-autoload -Uz history-beginning-search-menu
-zle -N history-beginning-search-menu-space-end history-beginning-search-menu
-
 autoload -Uz incarg
 zle -N incarg
 
@@ -128,12 +125,3 @@ bindkey -M viins "^[[A" up-line-or-search
 bindkey -M viins "^[[B" down-line-or-search
 bindkey -M viins "^[OA" up-line-or-search
 bindkey -M viins "^[OB" down-line-or-search
-
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
-bindkey -M vicmd '?' history-incremental-pattern-search-forward
-
-bindkey -M isearch "^M" accept-search
-bindkey -M isearch "^[" vi-cmd-mode
-bindkey -M isearch "^[[A" history-incremental-pattern-search-backward
-bindkey -M isearch "^[[B" history-incremental-pattern-search-forward
-bindkey -M isearch "^?" vi-backward-kill-word
