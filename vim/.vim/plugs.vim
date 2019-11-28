@@ -24,13 +24,12 @@ Plug 'milkypostman/vim-togglelist'
 
 Plug 'Yggdroot/indentLine', { 'on': [ 'IndentLinesDisable', 'IndentLinesEnable', 'IndentLinesToggle' ]}
 
-Plug 'kopischke/vim-fetch'
+Plug 'wsdjeg/vim-fetch'
 
 " Edit
 Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'justinmk/vim-sneak'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
