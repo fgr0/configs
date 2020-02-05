@@ -16,5 +16,7 @@ alias df='df -hk'
 autoload -Uz zmv
 alias zcp='zmv -C'
 alias zln='zmv -L'
-alias mmv='zmv -W'
+alias zmw='zmv -W'
 alias zmv='noglob zmv'
+
+(( $+commands[pwsh] )) && alias pwsh='pwsh -NoLogo'
