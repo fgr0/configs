@@ -33,3 +33,5 @@
 	program = /usr/local/bin/gpg
 [commit]
 	gpgsign = false
+[submodule]
+	recurse = true
