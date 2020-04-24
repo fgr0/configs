@@ -60,7 +60,7 @@ function prompt_laerador_setup() {
   zstyle ':vcs_info:*:*' actionformats '%F{242}:%b:%F{yellow}%a%F{242}%u%c'
 
   # Prompt sections
-  local root="%(!.%F{red}%n.%F{white}${SSH_TTY:+%n})%f"
+  local user="%(!.%F{red}%n.%F{white}${SSH_TTY:+%n})%f"
   local host="%f%(!.@%m.${SSH_TTY:+@%m})%f"
   local spwd="%F{blue}"'$(spwd)'"%f"
   local vcs='${vcs_info_msg_0_}'"%f"
@@ -69,7 +69,7 @@ function prompt_laerador_setup() {
   local code="%(?..%F{red}%?)%f"
   local elaptime='${_prompt_laerador_cmd_elapsed}'
 
-  PROMPT="${root}${host} ${spwd}${vcs} ${char} "
+  PROMPT="${user}${host} ${spwd}${vcs} ${char} "
   RPROMPT="${code} ${elaptime}"
   SPROMPT='%fzsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 

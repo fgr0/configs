@@ -18,7 +18,8 @@ function set-title-precmd() {
     tab     '\e]1;%s\a'
   )
 
-  local prefix=${SSH_CONNECTION:+"$(whoami)@${$(hostname)%%.*} "}
+  local who="%(!.%n@%m.${SSH_TTY:+%n@%m})"
+  local prefix=${(%)who:+"$who "}
   local suffix=${argv[1]:+" (${(V)argv[1]})"}
 
   printf $title[window] "$(spwd)${suffix}"
