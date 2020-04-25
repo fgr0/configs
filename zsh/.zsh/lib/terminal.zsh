@@ -18,15 +18,19 @@ function set-title-precmd() {
     tab     '\e]1;%s\a'
   )
 
-  local who="%(!.%n@%m.${SSH_TTY:+%n@%m})"
-  local prefix=${(%)who:+"$who "}
-  local suffix=${argv[1]:+" (${(V)argv[1]})"}
-
-  printf $title[window] "$(spwd)${suffix}"
+  local prefix suffix
 
   if [[ -z $TMUX ]]; then
-    printf $title[tab]    "${prefix}$(spwd)${suffix}"
+    prefix=${(%):-"%(!.%n@%m.${SSH_TTY:+%n@%m})"}
+  else
+    prefix=${(%):-"%(!.%n@%m.)"}
   fi
+
+  prefix=${prefix:+"$prefix "}
+  suffix=${argv[1]:+" (${(V)argv[1]})"}
+
+  printf $title[tab]    "${prefix}$(spwd)${suffix}"
+  printf $title[window] "${prefix}$(spwd)${suffix}"
 }
 
 add-zsh-hook precmd set-title-precmd
