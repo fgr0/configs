@@ -12,7 +12,8 @@ unsetopt menu_complete      # Dont autoselect the first completion entry
 # Add zsh-completion to $fpath
 fpath=($ZDOTDIR/ext/zsh-completions/src $fpath)
 
-autoload -Uz compinit && compinit -i
+mkdir -p -m 750 "$XDG_CACHE_HOME/zsh"
+autoload -Uz compinit && compinit -i -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 WORDCHARS=''
 

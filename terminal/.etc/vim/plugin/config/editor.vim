@@ -9,7 +9,7 @@ set fileformats+=mac
 set nrformats-=octal,hex
 set nrformats+=alpha
 
-silent! language en_US
+silent! language en_US.UTF-8
 
 set nospell
 set spellfile=$HOME/.vim/spell/custom.utf-8.add

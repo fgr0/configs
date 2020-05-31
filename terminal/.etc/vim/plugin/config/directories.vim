@@ -17,9 +17,10 @@ if has('persistent_undo')
   set undolevels=1000
   set undoreload=10000
 
-  set undodir=~/.cache/vim/undo
-  set backupdir=~/.cache/vim/backup
-  set directory=~/.cache/vim/swap,.
+  set undodir=$XDG_CACHE_HOME/vim/undo
+  set backupdir=$XDG_CACHE_HOME/vim/backup
+  set directory=$XDG_CACHE_HOME/vim/swap,.
+  set viminfofile=$XDG_CACHE_HOME/vim/viminfo
 
   if !isdirectory(&undodir)
     call mkdir(&undodir, 'p')
@@ -35,6 +36,6 @@ if has('persistent_undo')
 endif
 
 if has('mksession')
-  set viewdir=$HOME/.vim/cache/view
+  set viewdir=$XDG_CACHE_HOME/vim/view
   set viewoptions=folds,options,cursor,unix,slash
 endif

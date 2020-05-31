@@ -10,10 +10,8 @@ endif " }}}
 
 
 " Neovim detection
-if has('nvim')
-  set runtimepath^=~/.vim runtimepath+=~/.vim/after
-  let &packpath = &runtimepath
-endif
+set runtimepath^=$XDG_CONFIG_HOME/vim runtimepath+=$XDG_CONFIG_HOME/vim/after
+let &packpath = &runtimepath
 
 
 " Options
@@ -23,8 +21,8 @@ let g:nerdfont = 0
 " Load Plugins {{{
 call plug#extentions#disable_buildin()
 
-call plug#begin('~/.cache/vim/plugged')
-  source ~/.vim/plugs.vim
+call plug#begin('$XDG_CACHE_HOME/vim/plugged')
+  source $XDG_CONFIG_HOME/vim/plugs.vim
 call plug#end()
 
 " Enable plugin system
@@ -32,7 +30,7 @@ filetype plugin indent on
 syntax enable
 
 " Download plugins on fresh install
-if empty(glob('~/.cache/vim/plugged'))
+if empty(glob('$XDG_CACHE_HOME/vim/plugged'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 " }}}
