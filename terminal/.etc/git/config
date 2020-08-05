@@ -1,36 +1,35 @@
-[core]
-	editor = vim
-[color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
-[alias]
-    st = status
-    ci = commit
-    ps = push
-    pl = pull
-    co = checkout
-    lo = log --decorate --graph --show-signature
-    l1 = log --graph --format='%C(auto)%h%d [%C(bold red)%G?%C(bold green)% GK%Creset]%C(auto) %s (%ar)'
-    hist = log --date=short --pretty=tformat:'%C(auto)%H %ad - %an [%C(bold red)%G?%Creset] %s'
-[log]
-	decorate = none
-[push]
-	default = matching
-[mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
-[merge]
-	tool = fugitive
-[include]
-    path = ~/.gitconfig.local
 [user]
-    name = Franz Greiling
-	email = fgr@sadmac.de
-[gpg]
-	program = /usr/local/bin/gpg
-[commit]
-	gpgsign = false
+  name = Franz Greiling
+  email = fgr@sadmac.de
+[github]
+  user = fgr0
+[core]
+  editor = vim
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
+[alias]
+  c = commit
+  s = status
+  st = status
+  co = checkout
+  l = log --graph --format='%C(auto)%h%d [%C(bold red)%G?%C(bold green)% GK%Creset]%C(auto) %s (%ar)'
+  log = log --graph --show-signature
+  hist = log --date=short --pretty=tformat:'%C(auto)%H %ad - %an [%C(bold red)%G?%Creset] %s'
+[diff]
+  algorithm = patience
+[log]
+  decorate = auto
+[merge]
+  tool = fugitive
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[push]
+  default = matching
 [submodule]
-	recurse = true
+  recurse = true
+[include]
+  path = ~/.etc/git/local
