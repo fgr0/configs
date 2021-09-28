@@ -7,9 +7,13 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 #: Terminal Binaries
+brew "git"
 brew "mas"
+brew "media-info"
+brew "ncdu"
 brew "neovim"
-brew "tmux"
+brew "speedtest-cli"
+brew "tmux", args: ["HEAD"]
 brew "vim"
 brew "youtube-dl"
 
@@ -20,30 +24,39 @@ cask "gimp"
 cask "google-chrome"
 cask "iina"
 cask "iterm2"
-cask "microsoft-edge"
-cask "netnewswire"
 cask "plex"
+cask "plex-media-server"
 cask "powershell"
+cask "signal"
 
 #: Fonts
-cask "font-saucecodepro-nerd-font"
+cask "font-comic-mono"
+cask "font-comic-neue"
+cask "font-comic-sans-ms"
+cask "font-sauce-code-pro-nerd-font"
 
 #: App Store
+mas "Acorn", id: 1547371478
 mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344
+mas "Developer", id: 640199958
+mas "Discovery", id: 1381004916
 mas "Front and Center", id: 1493996622
-mas "Ghostery Lite", id: 1436953057
+mas "HomeControl", id: 1547121417
+mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Mactracker", id: 430255202
+mas "Marked 2", id: 890031187
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
-mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
+mas "Poolsuite FM", id: 1514817810
 mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
