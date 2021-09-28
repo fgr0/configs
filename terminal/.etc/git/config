@@ -33,3 +33,5 @@
   recurse = true
 [include]
   path = ~/.etc/git/local
+[init]
+	defaultBranch = main

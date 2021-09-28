@@ -1,1 +1,3 @@
 terminal/.etc/*/local
+terminal/.etc/gtk-2.0
+mac/Brewfile.lock.json

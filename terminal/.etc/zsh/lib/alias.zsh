@@ -20,3 +20,4 @@ alias zmw='zmv -W'
 alias zmv='noglob zmv'
 
 (( $+commands[pwsh] )) && alias pwsh='pwsh -NoLogo'
+(( $+commands[youtube-dl] )) && alias yt='youtube-dl'

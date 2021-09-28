@@ -7,7 +7,7 @@ if (( $+commands[go] )); then
   typeset -gxUT GOPATH gopath
 
   gopath=(
-    $HOME/.local/go
+    $XDG_DATA_HOME/go
   )
 
   path=(

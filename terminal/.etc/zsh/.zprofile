@@ -35,6 +35,7 @@ manpath=(
 )
 
 path=(
+  $HOME/.{bin,sbin}
   $HOME/.local/{bin,sbin}
   $prefix/{bin,sbin}
   $path
