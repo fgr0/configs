@@ -23,7 +23,9 @@ unsetopt clobber            # Dont overwrite existing files with '>' or '>>'
 #
 
 autoload -Uz url-quote-magic
+autoload -Uz bracketed-paste-magic
 zle -N self-insert url-quote-magic
+zle -N bracketed-paste bracketed-paste-magic
 
 autoload -Uz up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
@@ -106,7 +108,6 @@ bindkey -M vicmd "^[q" push-input
 bindkey -M viins "^[e" edit-command-line
 bindkey -M vicmd "^[e" edit-command-line
 
-
 bindkey -M viins "^[[3~" vi-delete-char
 bindkey -M vicmd "^[[3~" vi-delete-char
 
@@ -117,7 +118,7 @@ bindkey -M viins "^[[1;9C" vi-forward-word
 
 bindkey -M vicmd "#" vi-pound-insert
 bindkey -M vicmd "^M" reset-keymap-and-accept-line
-bindkey -M vicmd "^X" incarg
+bindkey -M vicmd "^A" incarg
 bindkey -M vicmd "\-" neg-argument
 
 # Search
