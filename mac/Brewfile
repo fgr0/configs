@@ -13,9 +13,10 @@ brew "media-info"
 brew "ncdu"
 brew "neovim"
 brew "speedtest-cli"
+brew "tag"
 brew "tmux", args: ["HEAD"]
 brew "vim"
-brew "youtube-dl"
+brew "yt-dlp"
 
 #: Standalone Apps
 cask "discord"
@@ -27,24 +28,29 @@ cask "iterm2"
 cask "plex"
 cask "plex-media-server"
 cask "powershell"
+cask "rectangle"
 cask "signal"
 
 #: Fonts
 cask "font-comic-mono"
 cask "font-comic-neue"
 cask "font-comic-sans-ms"
+cask "font-ia-writer-duo"
+cask "font-ia-writer-duospace"
+cask "font-ia-writer-mono"
+cask "font-ia-writer-quattro"
 cask "font-sauce-code-pro-nerd-font"
 
 #: App Store
 mas "Acorn", id: 1547371478
 mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498
-mas "Deliveries", id: 924726344
 mas "Developer", id: 640199958
 mas "Discovery", id: 1381004916
 mas "Front and Center", id: 1493996622
 mas "HomeControl", id: 1547121417
 mas "Hush", id: 1544743900
+mas "iA Writer", id: 775737590
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Mactracker", id: 430255202
@@ -54,10 +60,12 @@ mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
+mas "New File Menu", id: 1064959555
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Poolsuite FM", id: 1514817810
+mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959
+mas "Soulver 3", id: 1508732804
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
