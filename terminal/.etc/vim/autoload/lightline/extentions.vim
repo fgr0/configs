@@ -110,7 +110,7 @@ function! lightline#extentions#gitbranch() abort " {{{
     return ''
   endif
   let symbol = exists('g:nerdfont') && g:nerdfont ? '' : '↬'
-  return fugitive#head() !=# "" ? symbol . ( winwidth(0) > 110 ? ' ' .fugitive#head(6) : '' ) : ''
+  return FugitiveHead() !=# "" ? symbol . ( winwidth(0) > 110 ? ' ' . FugitiveHead(6) : '' ) : ''
 endfunction " }}}
 
 

@@ -14,4 +14,4 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Bookmarks
 if [[ -d "$HOME/Documents/" ]] { hash -d -- {doc,docs}=$HOME/Documents }
-if [[ -d "$HOME/Documents/Development" ]] { hash -d -- dev=$HOME/Documents/Development }
+if [[ -d "$HOME/Documents/dev" ]] { hash -d -- dev=$HOME/Documents/dev }
