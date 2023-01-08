@@ -20,4 +20,5 @@ alias zmw='zmv -W'
 alias zmv='noglob zmv'
 
 (( $+commands[pwsh] )) && alias pwsh='pwsh -NoLogo'
-(( $+commands[youtube-dl] )) && alias yt='youtube-dl'
+(( $+commands[yt-dlp] )) && alias yt='yt-dlp'
+(( $+commands[ffmpeg] )) && alias ffmpeg='ffmpeg -hide_banner'

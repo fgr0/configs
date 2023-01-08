@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+#
+# open man page in preview
+
+mandoc -T pdf "$(man -w $@)" | open -fa Preview
