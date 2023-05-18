@@ -2,8 +2,6 @@
 # ZLE Settings
 #
 
-# VI all the way
-
 setopt correct              # correct commands
 # setopt correct_all
 setopt beep                 # BOOP
@@ -18,10 +16,8 @@ setopt rc_quotes            # Allow '''' to signify a single quote within singly
 setopt multios              # Write to multiple descriptors
 unsetopt clobber            # Dont overwrite existing files with '>' or '>>'
 
-#
-# Load Widgets
-#
 
+#: Load Widgets
 autoload -Uz url-quote-magic
 autoload -Uz bracketed-paste-magic
 zle -N self-insert url-quote-magic
@@ -79,10 +75,9 @@ function prepend-sudo {
 }
 zle -N prepend-sudo
 
-#
-# Keybindings
-#
 
+#: Keybindings
+# vi all the way
 bindkey -v
 
 # Completion

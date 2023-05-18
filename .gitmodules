@@ -1,6 +1,6 @@
-[submodule "zsh/.zsh/ext/zsh-completions"]
-	path = terminal/.etc/zsh/ext/zsh-completions
+[submodule "shell/.etc/zsh/ext/zsh-completions"]
+	path = shell/.etc/zsh/ext/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "zsh/.zsh/ext/zsh-autosuggestions"]
-	path = terminal/.etc/zsh/ext/zsh-autosuggestions
+[submodule "shell/.etc/zsh/ext/zsh-autosuggestions"]
+	path = shell/.etc/zsh/ext/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions

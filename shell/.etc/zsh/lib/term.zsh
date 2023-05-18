@@ -3,12 +3,7 @@
 #
 
 
-
-#
-# Command Hooks
-#
-
-autoload -Uz add-zsh-hook
+#: helper functions
 
 # Sets title before prompt is displayed
 function set-title-precmd() {
@@ -32,8 +27,6 @@ function set-title-precmd() {
   printf $title[tab]    "${prefix}$(spwd)${suffix}"
   printf $title[window] "${prefix}$(spwd)${suffix}"
 }
-
-add-zsh-hook precmd set-title-precmd
 
 # Set title before command execution
 function set-title-with-command() {
@@ -62,4 +55,10 @@ function set-title-with-command() {
     set-title-precmd "$cmd"
   fi
 }
+
+
+#: Command Hooks
+autoload -Uz add-zsh-hook
+
+add-zsh-hook precmd set-title-precmd
 add-zsh-hook preexec set-title-with-command
