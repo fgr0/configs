@@ -28,3 +28,4 @@ alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r 
 
 #: Setup history-based autosuggestions
 source $ZDOTDIR/ext/zsh-autosuggestions/zsh-autosuggestions.zsh
+unset ZSH_AUTOSUGGEST_USE_ASYNC
