@@ -1,0 +1,48 @@
+#!/usr/bin/env zsh
+#
+# pretty login greeting
+
+function pretty_uptime () {
+  # calculate time
+  local decades years weeks days hours minutes seconds
+  local boottime=$(sysctl -n kern.boottime | awk '{print $4}' | sed 's/,//')
+  local elapsed=$(( $EPOCHSECONDS - $boottime ))
+
+  decades=$(( elapsed / (60 * 60 * 24 * 365 * 10) ))
+  (( elapsed -= decades * 60 * 60 * 24 * 365 * 10 ))
+  years=$(( elapsed / (60 * 60 * 24 * 365) ))
+  (( elapsed -= years * 60 * 60 * 24 * 365 ))
+  weeks=$(( elapsed / (60 * 60 * 24 * 7) ))
+  (( elapsed -= weeks * 60 * 60 * 24 * 7 ))
+  days=$(( elapsed / (60 * 60 * 24) ))
+  (( elapsed -= days * 60 * 60 * 24 ))
+  hours=$(( elapsed / (60 * 60) ))
+  (( elapsed -= hours * 60 * 60 ))
+  minutes=$(( elapsed / 60 ))
+  (( elapsed -= minutes * 60 ))
+  seconds=$(( elapsed ))
+
+  # construct string
+  local human=""
+
+  (( decades > 1 )) && human+="${decades} decades, " 
+  (( decades == 1 )) && human+="${decades} decade, "
+  (( years > 1 )) && human+="${years} years, " 
+  (( years == 1 )) && human+="${years} year, "
+  (( weeks > 1 )) && human+="${weeks} weeks, " 
+  (( weeks == 1 )) && human+="${weeks} week, "
+  (( days > 1 )) && human+="${days} days, " 
+  (( days == 1 )) && human+="${days} day, "
+  (( hours > 1 )) && human+="${hours} hours, " 
+  (( hours == 1 )) && human+="${hours} hour, "
+  (( minutes > 1 )) && human+="${minutes} minutes, " 
+  (( minutes == 1 )) && human+="${minutes} minute, "
+  (( seconds > 1 )) && human+="${seconds} seconds" 
+  (( seconds == 1 )) && human+="${seconds} second"
+
+  print -- $human
+}
+
+print -P "%B Hostname:%b  %F{5}$(uname -n)%f"
+print -P "%B OS:%b        %F{5}$(uname -rs)%f"
+print -P "%B Uptime:%b    %F{5}$(pretty_uptime)%f"
