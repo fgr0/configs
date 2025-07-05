@@ -20,7 +20,8 @@ if has('persistent_undo')
   set undodir=$XDG_CACHE_HOME/vim/undo
   set backupdir=$XDG_CACHE_HOME/vim/backup
   set directory=$XDG_CACHE_HOME/vim/swap,.
-  set viminfofile=$XDG_CACHE_HOME/vim/viminfo
+  " incompatible with nvim shada files
+  " set viminfofile=$XDG_CACHE_HOME/vim/viminfo
 
   if !isdirectory(&undodir)
     call mkdir(&undodir, 'p')

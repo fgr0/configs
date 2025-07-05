@@ -5,12 +5,12 @@
 
 function! mode#prose#init(...) abort
   " initialize reedes' plugins
-  call litecorrect#init()
-  if exists("a:1")
-    call pencil#init(a:1)
-  else
-    call pencil#init()
-  endif
+  " call litecorrect#init()
+  " if exists("a:1")
+  "   call pencil#init(a:1)
+  " else
+  "   call pencil#init()
+  " endif
   call textobj#sentence#init()
   call textobj#quote#init({'educate': 0})
 

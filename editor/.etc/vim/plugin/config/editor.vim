@@ -62,8 +62,9 @@ set diffopt+=vertical
 
 set commentstring=#\ %s
 
-set printoptions+=syntax:y
-set printoptions+=number:y
+" disabled - doesn't work in nvim
+" set printoptions+=syntax:y
+" set printoptions+=number:y
 " }}}
 
 
